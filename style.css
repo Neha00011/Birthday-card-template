@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Bodoni Moda',serif;
+}
+body{
+     height: 100vh; 
+    background-image: url("img.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   
+}
+.container{
+    perspective:1000px;
+     display:flexbox; 
+    flex-wrap: wrap; 
+     flex-direction:column; 
+}
+.card{
+    width:280px;
+    height:360px;
+    position: absolute;
+    top:100px;
+    left:100px;
+    transition:2s;
+    transform-style: preserve-3d;
+}
+.card:hover{
+    transform: rotateY(180deg);
+}
+.block{
+    position:absolute;
+    top:200px;
+    right:600px;
+    perspective: 800px;
+}
+.inside,
+.outside{
+    width:100%;
+    height:100%;
+    border-radius: 20px;
+    text-align: center;
+    padding:1.5rem;
+   
+}
+.outside{
+    background-color: blanchedalmond;
+    box-shadow: insert 0 5px 10px rgba(0,0,0,0.5);
+    position:absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+
+}
+.outside h1{
+    font-size:3rem ;
+    font-weight: bold;
+    color:salmon;
+    margin-bottom: 30px;
+}
+
+.inside{
+    background-color: salmon;
+    /* background-image: url("img4.jpeg"); */
+    box-shadow: insert 0 5px 10px rgba(0,0,0,0.5);
+    /*transform: rotateY(180deg);*/
+}
+
+.inside h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.frames{
+    width:500;
+    height:160px;
+    box-shadow: 0 5px 10px rgba(255,255,255,0.5);
+    display:flex;
+     flex-wrap: wrap; 
+     flex-direction:row; 
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 0.8rem;
+    position:absolute;
+
+     transform: rotateY(-230deg) rotateX(20deg);
+}
+.frames img{
+     width:125px;
+     height:125px;
+     border-radius: 50%;
+     box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+     
+}
+.frames p{
+    font-size: 20px;
+    font-weight: bold;
+    transform: rotateY(180deg);
+}
+.frames:nth-child(1)
+{
+    top:-110px;
+    width:500px;
+    z-index: +1;
+    background-color: rgb(255, 255, 0);
+}
+.frames:nth-child(2)
+{
+    background-color:rgb(231, 54, 83);
+    width:500px;
+
+}
+.frames:nth-child(3){
+    top:100px;
+    z-index: -1;
+    width:500px;
+    background-color: rgb(254, 72, 254);
+}
+
+
+@media(max-width:800px){
+    /*for mobile phones*/
+    .card{
+        width: 70vw;
+        height: 70vh;
+    }
+    .block{
+        visibility:hidden;
+    }
+}
+
+
